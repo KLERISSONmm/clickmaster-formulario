@@ -83,6 +83,19 @@
 </style>
 </head>
 
+<script>
+function enviarWhatsApp() {
+  // Número do WhatsApp
+  const numero = "5586988514295"; // formato internacional
+
+  // Abrir WhatsApp com mensagem automática
+  const texto = "Olá! Preenchi o formulário e gostaria de criar meu anúncio digital!";
+  const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(texto);
+
+  window.open(url, "_blank");
+}
+</script>
+
 <body>
 
 <header>
@@ -246,7 +259,7 @@
     <option>Landing Page</option>
   </select>
 
-  <button>Enviar</button>
+  <button onclick="enviarWhatsApp()">Enviar</button>
 </div>
 
 </body>
