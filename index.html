@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário Consultivo - ClickMaster Digital</title>
+<style>
+ body { font-family: Arial, sans-serif; background:#0b1120; color:#fff; padding:20px; }
+ .container { max-width:800px; margin:auto; background:#111827; padding:20px; border-radius:12px; }
+ img.logo { width:180px; display:block; margin:auto; }
+ h1 { text-align:center; color:#facc15; }
+ label { display:block; margin-top:15px; font-weight:bold; }
+ textarea, input, select { width:100%; padding:10px; border-radius:8px; border:none; margin-top:5px; }
+ button { margin-top:20px; width:100%; padding:15px; background:#facc15; border:none; color:#000; font-size:18px; font-weight:bold; border-radius:10px; cursor:pointer; }
+</style>
+<script>
+function enviarWhatsApp(){
+    const dados = new FormData(document.getElementById('form'));
+    let msg = '';
+    for (let [key, value] of dados.entries()) msg += key+": "+value+"%0A";
+    window.location.href = "https://wa.me/5586988514295?text="+msg;
+}
+</script>
+</head>
+<body>
+<div class="container">
+<img src="logo1.png" class="logo">
+<h1>Briefing Consultivo - ClickMaster Digital</h1>
+<form id="form">
+<label>Nome da empresa*</label><input required name="Nome da empresa">
+
+<label>Serviço/produto principal*</label><input required name="Serviço principal">
+
+<label>Público-alvo*</label><textarea required name="Público-alvo"></textarea>
+
+<label>Objetivo do anúncio*</label>
+<select required name="Objetivo">
+<option value="">Selecione</option>
+<option>Vendas</option><option>Leads</option><option>Agendamentos</option><option>Seguidores</option><option>Reconhecimento</option>
+</select>
+
+<label>Materiais disponíveis (fotos, vídeos, depoimentos)*</label>
+<textarea required name="Materiais"></textarea>
+
+<button type="button" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
+</form>
+</div>
+</body>
+</html>
