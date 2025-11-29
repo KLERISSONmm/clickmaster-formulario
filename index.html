@@ -13,13 +13,32 @@
     padding: 0;
     color: #e2e8f0;
   }
-  header {
-    text-align: center;
-    padding: 25px;
+
+  /* HERO BANNER */
+  header.hero {
+    width: 100%;
+    height: 280px;
+    background: url("Logo2.png") center/contain no-repeat;
+    background-color: #0d1117;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+    border-bottom: 4px solid #facc15;
   }
-  header img {
-    width: 160px;
+
+  header.hero img {
+    display: none; /* usamos o background como banner */
   }
+
+  header.hero h1 {
+    color: #facc15;
+    font-size: 32px;
+    text-shadow: 2px 2px 4px #000;
+    margin: 0;
+  }
+
   .container {
     max-width: 900px;
     margin: 20px auto;
@@ -76,31 +95,25 @@
   }
 
   @media(max-width:600px){
-    h1{ font-size: 22px; }
-    header img{ width: 130px; }
+    header.hero {
+      height: 200px;
+      background-size: 90%;
+    }
+    header.hero h1 {
+      font-size: 20px;
+      padding: 0 15px;
+      text-align: center;
+    }
     .container{ padding: 18px; }
   }
 </style>
 </head>
 
-<script>
-function enviarWhatsApp() {
-  // Número do WhatsApp
-  const numero = "5586988514295"; // formato internacional
-
-  // Abrir WhatsApp com mensagem automática
-  const texto = "Olá! Preenchi o formulário e gostaria de criar meu anúncio digital!";
-  const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(texto);
-
-  window.open(url, "_blank");
-}
-</script>
-
 <body>
 
-<header>
-  <!-- USE O NOME EXATO DO ARQUIVO DA SUA LOGO 2 -->
-  <img src="logo2.png" alt="Logo da Empresa" />
+<!-- HERO BANNER -->
+<header class="hero">
+  <img src="Logo2.png" alt="Logo da Empresa">
   <h1>Formulário para Criar o Anúncio Perfeito</h1>
 </header>
 
@@ -109,10 +122,10 @@ function enviarWhatsApp() {
   <h2>Informações Básicas</h2>
 
   <label>Qual o nome da sua empresa?</label>
-  <input type="text" placeholder="Digite aqui...">
+  <input id="empresa" type="text" placeholder="Digite aqui...">
 
   <label>Qual o ramo de atuação?</label>
-  <select>
+  <select id="ramo">
     <option>Restaurante / Alimentação</option>
     <option>Beleza / Estética</option>
     <option>Moda / Loja de Roupas</option>
@@ -125,14 +138,14 @@ function enviarWhatsApp() {
   </select>
 
   <label>Qual região de atuação?</label>
-  <input type="text" placeholder="Ex: Cidade, bairro, estado...">
+  <input id="regiao" type="text" placeholder="Ex: Cidade, bairro, estado...">
 
   <label>Envie o logotipo da sua empresa:</label>
   <input type="file" accept="image/*">
 
   <h2>1. Sobre a Empresa</h2>
   <label>Posicionamento da marca:</label>
-  <select>
+  <select id="posicionamento">
     <option>Premium</option>
     <option>Acessível</option>
     <option>Tradicional</option>
@@ -141,27 +154,27 @@ function enviarWhatsApp() {
 
   <h2>2. Sobre o Público-Alvo</h2>
   <label>Quem é o cliente ideal?</label>
-  <div class="checkbox-group">
-    <label><input type="checkbox"> Jovens (18–30 anos)</label>
-    <label><input type="checkbox"> Adultos (30–55 anos)</label>
-    <label><input type="checkbox"> Moradores da região</label>
-    <label><input type="checkbox"> Empresas locais</label>
-    <label><input type="checkbox"> Público premium</label>
-    <label><input type="checkbox"> Pessoas que buscam praticidade</label>
+  <div id="publicoIdeal" class="checkbox-group">
+    <label><input type="checkbox" value="Jovens (18–30 anos)"> Jovens (18–30 anos)</label>
+    <label><input type="checkbox" value="Adultos (30–55 anos)"> Adultos (30–55 anos)</label>
+    <label><input type="checkbox" value="Moradores da região"> Moradores da região</label>
+    <label><input type="checkbox" value="Empresas locais"> Empresas locais</label>
+    <label><input type="checkbox" value="Público premium"> Público premium</label>
+    <label><input type="checkbox" value="Buscam praticidade"> Buscam praticidade</label>
   </div>
 
   <label>Principais dores/desejos do público:</label>
-  <div class="checkbox-group">
-    <label><input type="checkbox"> Economia</label>
-    <label><input type="checkbox"> Qualidade</label>
-    <label><input type="checkbox"> Rapidez</label>
-    <label><input type="checkbox"> Conveniência</label>
-    <label><input type="checkbox"> Exclusividade</label>
+  <div id="dores" class="checkbox-group">
+    <label><input type="checkbox" value="Economia"> Economia</label>
+    <label><input type="checkbox" value="Qualidade"> Qualidade</label>
+    <label><input type="checkbox" value="Rapidez"> Rapidez</label>
+    <label><input type="checkbox" value="Conveniência"> Conveniência</label>
+    <label><input type="checkbox" value="Exclusividade"> Exclusividade</label>
   </div>
 
   <h2>3. Sobre o Produto/Serviço</h2>
   <label>Tipo de produto/serviço:</label>
-  <select>
+  <select id="tipoProduto">
     <option>Serviço presencial</option>
     <option>Serviço online</option>
     <option>Produto físico</option>
@@ -169,17 +182,17 @@ function enviarWhatsApp() {
   </select>
 
   <label>Benefícios principais:</label>
-  <div class="checkbox-group">
-    <label><input type="checkbox"> Alta qualidade</label>
-    <label><input type="checkbox"> Melhor custo-benefício</label>
-    <label><input type="checkbox"> Resultado rápido</label>
-    <label><input type="checkbox"> Suporte especializado</label>
-    <label><input type="checkbox"> Garantia estendida</label>
+  <div id="beneficios" class="checkbox-group">
+    <label><input type="checkbox" value="Alta qualidade"> Alta qualidade</label>
+    <label><input type="checkbox" value="Melhor custo-benefício"> Melhor custo-benefício</label>
+    <label><input type="checkbox" value="Resultado rápido"> Resultado rápido</label>
+    <label><input type="checkbox" value="Suporte especializado"> Suporte especializado</label>
+    <label><input type="checkbox" value="Garantia estendida"> Garantia estendida</label>
   </div>
 
   <h2>4. Objetivo do Anúncio</h2>
   <label>Objetivo principal:</label>
-  <select>
+  <select id="objetivo">
     <option>Vendas imediatas</option>
     <option>Geração de leads</option>
     <option>Agendamentos</option>
@@ -189,7 +202,7 @@ function enviarWhatsApp() {
 
   <h2>5. Criatividade do Anúncio</h2>
   <label>Formato de anúncio preferido:</label>
-  <select>
+  <select id="formato">
     <option>Imagem estática</option>
     <option>Vídeo</option>
     <option>Carrossel</option>
@@ -198,7 +211,7 @@ function enviarWhatsApp() {
 
   <h2>6. Tom da Comunicação</h2>
   <label>Como deve soar o anúncio?</label>
-  <select>
+  <select id="tom">
     <option>Formal</option>
     <option>Engraçado</option>
     <option>Direto ao ponto</option>
@@ -207,7 +220,7 @@ function enviarWhatsApp() {
   </select>
 
   <label>Estilo desejado:</label>
-  <select>
+  <select id="estilo">
     <option>Profissional</option>
     <option>Humanizado e pessoal</option>
     <option>Alto padrão</option>
@@ -216,17 +229,17 @@ function enviarWhatsApp() {
 
   <h2>7. Prova Social</h2>
   <label>Disponível:</label>
-  <div class="checkbox-group">
-    <label><input type="checkbox"> Depoimentos</label>
-    <label><input type="checkbox"> Avaliações do Google</label>
-    <label><input type="checkbox"> Fotos reais</label>
-    <label><input type="checkbox"> Antes/depois</label>
-    <label><input type="checkbox"> Certificados</label>
+  <div id="prova" class="checkbox-group">
+    <label><input type="checkbox" value="Depoimentos"> Depoimentos</label>
+    <label><input type="checkbox" value="Avaliações do Google"> Avaliações do Google</label>
+    <label><input type="checkbox" value="Fotos reais"> Fotos reais</label>
+    <label><input type="checkbox" value="Antes/depois"> Antes/depois</label>
+    <label><input type="checkbox" value="Certificados"> Certificados</label>
   </div>
 
   <h2>8. Budget</h2>
-  <label>Qual é o orçamento mensal?</label>
-  <select>
+  <label>Orçamento mensal:</label>
+  <select id="orcamento">
     <option>Até R$ 200</option>
     <option>R$ 200 a R$ 500</option>
     <option>R$ 500 a R$ 1.000</option>
@@ -234,7 +247,7 @@ function enviarWhatsApp() {
   </select>
 
   <label>Preferência de investimento:</label>
-  <select>
+  <select id="investimento">
     <option>Alcance</option>
     <option>Cliques</option>
     <option>Conversões</option>
@@ -242,17 +255,17 @@ function enviarWhatsApp() {
 
   <h2>9. Concorrência</h2>
   <label>Concorrentes fazem melhor em:</label>
-  <div class="checkbox-group">
-    <label><input type="checkbox"> Preço</label>
-    <label><input type="checkbox"> Atendimento</label>
-    <label><input type="checkbox"> Qualidade</label>
-    <label><input type="checkbox"> Variedade</label>
-    <label><input type="checkbox"> Entrega</label>
+  <div id="concorrencia" class="checkbox-group">
+    <label><input type="checkbox" value="Preço"> Preço</label>
+    <label><input type="checkbox" value="Atendimento"> Atendimento</label>
+    <label><input type="checkbox" value="Qualidade"> Qualidade</label>
+    <label><input type="checkbox" value="Variedade"> Variedade</label>
+    <label><input type="checkbox" value="Entrega"> Entrega</label>
   </div>
 
   <h2>10. Detalhes Finalizadores</h2>
   <label>Destino do clique:</label>
-  <select>
+  <select id="destino">
     <option>WhatsApp</option>
     <option>Site</option>
     <option>Instagram</option>
@@ -261,6 +274,48 @@ function enviarWhatsApp() {
 
   <button onclick="enviarWhatsApp()">Enviar</button>
 </div>
+
+
+<script>
+function coletarCheckboxes(id){
+  const itens = Array.from(document.querySelectorAll(`#${id} input:checked`)).map(i => i.value);
+  return itens.join(", ");
+}
+
+function enviarWhatsApp() {
+
+  const numero = "5586988514295";
+
+  const texto = 
+    "*FORMULÁRIO DE ANÚNCIO DIGITAL*\n\n" +
+    "*Empresa:* " + document.getElementById("empresa").value + "\n" +
+    "*Ramo:* " + document.getElementById("ramo").value + "\n" +
+    "*Região:* " + document.getElementById("regiao").value + "\n\n" +
+
+    "*Posicionamento:* " + document.getElementById("posicionamento").value + "\n\n" +
+
+    "*Cliente ideal:* " + coletarCheckboxes("publicoIdeal") + "\n" +
+    "*Dores:* " + coletarCheckboxes("dores") + "\n\n" +
+
+    "*Tipo de produto/serviço:* " + document.getElementById("tipoProduto").value + "\n" +
+    "*Benefícios:* " + coletarCheckboxes("beneficios") + "\n\n" +
+
+    "*Objetivo:* " + document.getElementById("objetivo").value + "\n" +
+    "*Formato:* " + document.getElementById("formato").value + "\n" +
+    "*Tom:* " + document.getElementById("tom").value + "\n" +
+    "*Estilo:* " + document.getElementById("estilo").value + "\n\n" +
+
+    "*Prova social:* " + coletarCheckboxes("prova") + "\n" +
+    "*Orçamento:* " + document.getElementById("orcamento").value + "\n" +
+    "*Investimento:* " + document.getElementById("investimento").value + "\n\n" +
+
+    "*Concorrência:* " + coletarCheckboxes("concorrencia") + "\n" +
+    "*Destino do clique:* " + document.getElementById("destino").value;
+
+  const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(texto);
+  window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
