@@ -5,82 +5,179 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Formulário de Anúncio Digital</title>
   <style>
-    body { font-family: Arial, sans-serif; background:#0d1117; color:#e5e5e5; margin:0; padding:0;}
-    header { text-align:center; padding:30px; }
-    header img { width:180px; }
-    .container {
-      max-width:900px; margin:30px auto; background:#161b22;
-      padding:25px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.5);
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
     }
-    h2 { margin-top:40px; color:#f1c453; border-left:6px solid #c9a227; padding-left:10px;}
-    label { font-weight:bold; margin-top:15px; display:block;}
-    textarea,input { width:100%; padding:10px; margin-top:5px; border:1px solid #333; border-radius:6px;
-      background:#0d1117; color:#e5e5e5;}
-    button { width:100%; margin-top:30px; padding:15px; font-size:18px; background:#c9a227; border:none;
-      border-radius:8px; color:#000; cursor:pointer; font-weight:bold;}
-    button:hover { background:#e5c76b; }
+    header {
+      background: #111827;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 40px;
+      color: #111827;
+      border-left: 6px solid #6366f1;
+      padding-left: 10px;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 15px;
+      display: block;
+    }
+    textarea, input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    button {
+      margin-top: 30px;
+      padding: 15px;
+      width: 100%;
+      background: #6366f1;
+      border: none;
+      color: white;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover { background: #4f46e5; }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo1.png" alt="Logo ClickMaster Digital" />
+    <img src="Logo1" alt="Logo da Empresa" />
     <h1>Formulário para Criar o Anúncio Perfeito</h1>
   </header>
 
   <div class="container">
+
     <h2>1. Sobre a Empresa</h2>
-    <label>Qual é o nome da empresa e qual o principal serviço/produto oferecido?</label><textarea></textarea>
-    <label>Há quanto tempo a empresa está no mercado?</label><textarea></textarea>
-    <label>O que diferencia sua empresa dos concorrentes?</label><textarea></textarea>
-    <label>Qual é o posicionamento atual da marca?</label><textarea></textarea>
+    <label>Qual é o nome da empresa e qual o principal serviço/produto oferecido?</label>
+    <textarea></textarea>
+
+    <label>Há quanto tempo a empresa está no mercado?</label>
+    <textarea></textarea>
+
+    <label>O que diferencia sua empresa dos concorrentes?</label>
+    <textarea></textarea>
+
+    <label>Qual é o posicionamento atual da marca?</label>
+    <textarea></textarea>
 
     <h2>2. Sobre o Público-Alvo</h2>
-    <label>Quem é o cliente ideal?</label><textarea></textarea>
-    <label>Quais dores, problemas ou desejos esse público possui?</label><textarea></textarea>
-    <label>O que faz o cliente decidir comprar?</label><textarea></textarea>
-    <label>Existe público que você NÃO quer atingir?</label><textarea></textarea>
+    <label>Quem é o cliente ideal?</label>
+    <textarea></textarea>
+
+    <label>Quais dores, problemas ou desejos esse público possui?</label>
+    <textarea></textarea>
+
+    <label>O que faz o cliente decidir comprar?</label>
+    <textarea></textarea>
+
+    <label>Existe público que você NÃO quer atingir?</label>
+    <textarea></textarea>
 
     <h2>3. Sobre o Produto/Serviço</h2>
-    <label>Qual produto/serviço será anunciado?</label><textarea></textarea>
-    <label>Principais benefícios:</label><textarea></textarea>
-    <label>Preço e promoções:</label><textarea></textarea>
-    <label>Garantias, bônus e diferenciais:</label><textarea></textarea>
-    <label>Processo de compra:</label><textarea></textarea>
+    <label>Qual produto/serviço será anunciado?</label>
+    <textarea></textarea>
+
+    <label>Principais benefícios:</label>
+    <textarea></textarea>
+
+    <label>Preço e promoções:</label>
+    <textarea></textarea>
+
+    <label>Garantias, bônus e diferenciais:</label>
+    <textarea></textarea>
+
+    <label>Processo de compra:</label>
+    <textarea></textarea>
 
     <h2>4. Objetivo do Anúncio</h2>
-    <label>Objetivo principal:</label><textarea></textarea>
-    <label>Meta específica:</label><textarea></textarea>
-    <label>Prazo estimado:</label><textarea></textarea>
+    <label>Objetivo principal:</label>
+    <textarea></textarea>
 
-    <h2>5. Criatividade</h2>
-    <label>Possui fotos, vídeos ou depoimentos?</label><textarea></textarea>
-    <label>Tipo de criativo preferido:</label><textarea></textarea>
-    <label>Frase-chave obrigatória:</label><textarea></textarea>
-    <label>Restrições:</label><textarea></textarea>
+    <label>Meta específica:</label>
+    <textarea></textarea>
+
+    <label>Prazo estimado:</label>
+    <textarea></textarea>
+
+    <h2>5. Criatividade do Anúncio</h2>
+    <label>Possui fotos, vídeos ou depoimentos?</label>
+    <textarea></textarea>
+
+    <label>Tipo de criativo preferido:</label>
+    <textarea></textarea>
+
+    <label>Frase-chave obrigatória:</label>
+    <textarea></textarea>
+
+    <label>Restrições:</label>
+    <textarea></textarea>
 
     <h2>6. Tom da Comunicação</h2>
-    <label>Como quer que o anúncio soe?</label><textarea></textarea>
-    <label>Estilo da comunicação:</label><textarea></textarea>
+    <label>Como quer que o anúncio soe?</label>
+    <textarea></textarea>
 
-    <h2>7. Prova Social</h2>
-    <label>Depoimentos, avaliações e provas sociais:</label><textarea></textarea>
+    <label>Estilo da comunicação:</label>
+    <textarea></textarea>
+
+    <h2>7. Prova Social e Credibilidade</h2>
+    <label>Depoimentos, avaliações e provas sociais:</label>
+    <textarea></textarea>
 
     <h2>8. Budget</h2>
-    <label>Orçamento mensal:</label><textarea></textarea>
-    <label>Testes A/B?</label><textarea></textarea>
-    <label>Preferência de investimento:</label><textarea></textarea>
+    <label>Orçamento mensal:</label>
+    <textarea></textarea>
+
+    <label>Testes A/B?</label>
+    <textarea></textarea>
+
+    <label>Preferência de investimento:</label>
+    <textarea></textarea>
 
     <h2>9. Concorrência</h2>
-    <label>Principais concorrentes:</label><textarea></textarea>
-    <label>O que eles fazem melhor?</label><textarea></textarea>
-    <label>O que você faz melhor?</label><textarea></textarea>
+    <label>Principais concorrentes:</label>
+    <textarea></textarea>
+
+    <label>O que eles fazem melhor?</label>
+    <textarea></textarea>
+
+    <label>O que você faz melhor?</label>
+    <textarea></textarea>
 
     <h2>10. Detalhes Finalizadores</h2>
-    <label>Destino do clique:</label><textarea></textarea>
-    <label>Horários/dias preferidos:</label><textarea></textarea>
-    <label>Aprovar criativos antes da publicação?</label><textarea></textarea>
+    <label>Destino do clique do anúncio:</label>
+    <textarea></textarea>
 
-    <button>Enviar</button>
+    <label>Horários/dias preferidos:</label>
+    <textarea></textarea>
+
+    <label>Aprovar criativos antes da publicação?</label>
+    <textarea></textarea>
+
+    <button>Enviar Formulário</button>
   </div>
 </body>
 </html>
