@@ -5,61 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Formulário de Anúncio Digital</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    header {
-      background: #111827;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header img {
-      width: 120px;
-      margin-bottom: 10px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      margin-top: 40px;
-      color: #111827;
-      border-left: 6px solid #6366f1;
-      padding-left: 10px;
-    }
-    label {
-      font-weight: bold;
-      margin-top: 15px;
-      display: block;
-    }
-    textarea, input, select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 15px;
-    }
-    button {
-      margin-top: 30px;
-      padding: 15px;
-      width: 100%;
-      background: #6366f1;
-      border: none;
-      color: white;
-      font-size: 18px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; color: #333; }
+    header { background: #111827; color: white; padding: 20px; text-align: center; }
+    header img { width: 120px; margin-bottom: 10px; }
+    .container { max-width: 900px; margin: 30px auto; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    h2 { margin-top: 40px; color: #111827; border-left: 6px solid #6366f1; padding-left: 10px; }
+    label { font-weight: bold; margin-top: 10px; display: block; }
+    select, input[type="checkbox"] { margin-top: 5px; padding: 10px; width: 100%; border-radius: 6px; border: 1px solid #ccc; }
+    .checkbox-group { margin: 10px 0; }
+    button { margin-top: 30px; padding: 15px; width: 100%; background: #6366f1; border: none; color: white; font-size: 18px; border-radius: 8px; cursor: pointer; }
     button:hover { background: #4f46e5; }
   </style>
 </head>
@@ -72,112 +26,136 @@
   <div class="container">
 
     <h2>1. Sobre a Empresa</h2>
-    <label>Qual é o nome da empresa e qual o principal serviço/produto oferecido?</label>
-    <textarea></textarea>
 
-    <label>Há quanto tempo a empresa está no mercado?</label>
-    <textarea></textarea>
-
-    <label>O que diferencia sua empresa dos concorrentes?</label>
-    <textarea></textarea>
-
-    <label>Qual é o posicionamento atual da marca?</label>
-    <textarea></textarea>
+    <label>Posicionamento da marca:</label>
+    <select>
+      <option>Premium</option>
+      <option>Acessível</option>
+      <option>Tradicional</option>
+      <option>Inovadora</option>
+    </select>
 
     <h2>2. Sobre o Público-Alvo</h2>
     <label>Quem é o cliente ideal?</label>
-    <textarea></textarea>
+    <div class="checkbox-group">
+      <label><input type="checkbox"> Jovens (18–30 anos)</label>
+      <label><input type="checkbox"> Adultos (30–55 anos)</label>
+      <label><input type="checkbox"> Moradores da região</label>
+      <label><input type="checkbox"> Empresas locais</label>
+      <label><input type="checkbox"> Público premium</label>
+      <label><input type="checkbox"> Pessoas que buscam praticidade</label>
+    </div>
 
-    <label>Quais dores, problemas ou desejos esse público possui?</label>
-    <textarea></textarea>
-
-    <label>O que faz o cliente decidir comprar?</label>
-    <textarea></textarea>
-
-    <label>Existe público que você NÃO quer atingir?</label>
-    <textarea></textarea>
+    <label>Principais dores/desejos do público:</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox"> Economia</label>
+      <label><input type="checkbox"> Qualidade</label>
+      <label><input type="checkbox"> Rapidez</label>
+      <label><input type="checkbox"> Conveniência</label>
+      <label><input type="checkbox"> Exclusividade</label>
+    </div>
 
     <h2>3. Sobre o Produto/Serviço</h2>
-    <label>Qual produto/serviço será anunciado?</label>
-    <textarea></textarea>
+    <label>Tipo de produto/serviço:</label>
+    <select>
+      <option>Serviço presencial</option>
+      <option>Serviço online</option>
+      <option>Produto físico</option>
+      <option>Produto digital</option>
+    </select>
 
-    <label>Principais benefícios:</label>
-    <textarea></textarea>
-
-    <label>Preço e promoções:</label>
-    <textarea></textarea>
-
-    <label>Garantias, bônus e diferenciais:</label>
-    <textarea></textarea>
-
-    <label>Processo de compra:</label>
-    <textarea></textarea>
+    <label>Benefícios principais:</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox"> Alta qualidade</label>
+      <label><input type="checkbox"> Melhor custo-benefício</label>
+      <label><input type="checkbox"> Resultado rápido</label>
+      <label><input type="checkbox"> Suporte especializado</label>
+      <label><input type="checkbox"> Garantia estendida</label>
+    </div>
 
     <h2>4. Objetivo do Anúncio</h2>
     <label>Objetivo principal:</label>
-    <textarea></textarea>
-
-    <label>Meta específica:</label>
-    <textarea></textarea>
-
-    <label>Prazo estimado:</label>
-    <textarea></textarea>
+    <select>
+      <option>Vendas imediatas</option>
+      <option>Geração de leads</option>
+      <option>Agendamentos</option>
+      <option>Mais seguidores</option>
+      <option>Reconhecimento de marca</option>
+    </select>
 
     <h2>5. Criatividade do Anúncio</h2>
-    <label>Possui fotos, vídeos ou depoimentos?</label>
-    <textarea></textarea>
-
-    <label>Tipo de criativo preferido:</label>
-    <textarea></textarea>
-
-    <label>Frase-chave obrigatória:</label>
-    <textarea></textarea>
-
-    <label>Restrições:</label>
-    <textarea></textarea>
+    <label>Formato de anúncio preferido:</label>
+    <select>
+      <option>Imagem estática</option>
+      <option>Vídeo</option>
+      <option>Carrossel</option>
+      <option>Copy forte (texto)</option>
+    </select>
 
     <h2>6. Tom da Comunicação</h2>
-    <label>Como quer que o anúncio soe?</label>
-    <textarea></textarea>
+    <label>Como deve soar o anúncio?</label>
+    <select>
+      <option>Formal</option>
+      <option>Engraçado</option>
+      <option>Direto ao ponto</option>
+      <option>Inspirador</option>
+      <option>Técnico</option>
+    </select>
 
-    <label>Estilo da comunicação:</label>
-    <textarea></textarea>
+    <label>Estilo desejado:</label>
+    <select>
+      <option>Profissional</option>
+      <option>Humanizado e pessoal</option>
+      <option>Alto padrão</option>
+      <option>Popular e acessível</option>
+    </select>
 
-    <h2>7. Prova Social e Credibilidade</h2>
-    <label>Depoimentos, avaliações e provas sociais:</label>
-    <textarea></textarea>
+    <h2>7. Prova Social</h2>
+    <label>Disponível:</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox"> Depoimentos</label>
+      <label><input type="checkbox"> Avaliações do Google</label>
+      <label><input type="checkbox"> Fotos reais</label>
+      <label><input type="checkbox"> Antes/depois</label>
+      <label><input type="checkbox"> Certificados</label>
+    </div>
 
     <h2>8. Budget</h2>
-    <label>Orçamento mensal:</label>
-    <textarea></textarea>
-
-    <label>Testes A/B?</label>
-    <textarea></textarea>
+    <label>Qual é o orçamento mensal?</label>
+    <select>
+      <option>Até R$ 200</option>
+      <option>R$ 200 a R$ 500</option>
+      <option>R$ 500 a R$ 1.000</option>
+      <option>Acima de R$ 1.000</option>
+    </select>
 
     <label>Preferência de investimento:</label>
-    <textarea></textarea>
+    <select>
+      <option>Alcance</option>
+      <option>Cliques</option>
+      <option>Conversões</option>
+    </select>
 
     <h2>9. Concorrência</h2>
-    <label>Principais concorrentes:</label>
-    <textarea></textarea>
-
-    <label>O que eles fazem melhor?</label>
-    <textarea></textarea>
-
-    <label>O que você faz melhor?</label>
-    <textarea></textarea>
+    <label>Concorrentes fazem melhor em:</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox"> Preço</label>
+      <label><input type="checkbox"> Atendimento</label>
+      <label><input type="checkbox"> Qualidade</label>
+      <label><input type="checkbox"> Variedade</label>
+      <label><input type="checkbox"> Entrega</label>
+    </div>
 
     <h2>10. Detalhes Finalizadores</h2>
-    <label>Destino do clique do anúncio:</label>
-    <textarea></textarea>
+    <label>Destino do clique:</label>
+    <select>
+      <option>WhatsApp</option>
+      <option>Site</option>
+      <option>Instagram</option>
+      <option>Landing Page</option>
+    </select>
 
-    <label>Horários/dias preferidos:</label>
-    <textarea></textarea>
-
-    <label>Aprovar criativos antes da publicação?</label>
-    <textarea></textarea>
-
-    <button>Enviar Formulário</button>
+    <button>Enviar</button>
   </div>
 </body>
 </html>
